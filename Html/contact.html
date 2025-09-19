@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone - Contacts</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" 
+          rel="stylesheet"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" 
+          crossorigin="anonymous">
+    <!-- Thêm Bootstap Icon -->
+    <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
+            crossorigin="anonymous">
+    </script>
+    <style>
+        form label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        form input, form textarea {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+            transition: border 0.3s;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #0d6efd;
+            outline: none;
+            box-shadow: 0 0 0 0.1rem rgba(13,110,253,0.25);
+        }
+
+        form button {
+            background-color: #0d6efd;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background-color: #0b5ed7;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <header id="nav-title" class="container-nav-title">
+        <div class="container-fluid bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a href="../index.html" class="navbar-brand d-flex align-items-center gap-2">
+                    <img src="../Res/Img/gaming-icon.jpg" alt="logo" style="width: 50px; height: 50px;">
+                    <h1 class="text-white fw-bold fs-4">GameZone</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto gap-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./ranking.html">Bảng xếp hạng</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Thể loại</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./categories.html#cat-strategy">Trí tuệ</a></li>
+                                <li><a class="dropdown-item" href="./categories.html#cat-shooter">Hành động</a></li>
+                                <li><a class="dropdown-item" href="./categories.html#cat-card">Chiến thuật</a></li>
+                                <li><a class="dropdown-item" href="./categories.html#cat-sports">Thể thao</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="./categories.html">Tất cả</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./contact.html">Liên hệ</a>
+                        </li>
+                        <li id="profile-menu" class="nav-item dropdown d-none">
+                            <a class="nav-link dropdown-toggle" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">Hồ sơ cá nhân</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./infomation.html">Thông tin cá nhân</a></li>
+                                <li><a class="dropdown-item" href="./setting.html">Cài đặt</a></li>
+                                <li><a class="dropdown-item" href="../index.html" onclick="logoutUser()">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                        <li id="profile-login" class="nav-item">
+                            <a class="nav-link" href="./login.html">Đăng nhập</a>
+                        </li>
+                        <li id="profile-register" class="nav-item">
+                            <a class="nav-link" href="./register.html">Đăng ký</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contact" class="container py-5">
+        <h2 class="text-center mb-4">📬 Liên hệ với GameZone</h2>
+        <p class="text-center mb-5">Bạn có góp ý, câu hỏi, hay muốn hợp tác? Vui lòng điền thông tin bên dưới!</p>
+        <div class="row g-5">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nguyễn Văn A" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email liên hệ</label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Nội dung</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Nội dung liên hệ..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi liên hệ</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="p-4 bg-light rounded shadow-sm">
+                    <h5 class="mb-3">Thông tin liên hệ</h5>
+                    <p><i class="bi bi-envelope-fill me-2"></i> contact@gamezone.vn</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i> 0987 654 321</p>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> 02 Song Hành, TP.Thủ Đức</p>
+                    <hr>
+                    <h6>Kết nối mạng xã hội:</h6>
+                    <a href="https://facebook.com" class="text-dark fs-4 me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="https://youtube.com" class="text-dark fs-4 me-3"><i class="bi bi-youtube"></i></a>
+                    <a href="https://tiktok.com" class="text-dark fs-4"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light pt-5 pb-3 mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <a href="../index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                    <img src="../Res/Img/gaming-icon.jpg" alt="logo" style="width: 50px; height: 50px;">
+                    <h4 class="fw-bold text-warning text-uppercase">GameZone</h4>
+                </a>
+                <p>Kho tàng game online miễn phí, không quảng cáo. Thách thức kỹ năng và thư giãn mọi lúc!</p>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase mb-3">Liên kết</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../index.html" class="footer-link">Trang chủ</a></li>
+                    <li><a href="./ranking.html" class="footer-link">Xếp hạng</a></li>
+                    <li><a href="#" class="footer-link">Thể loại</a></li>
+                    <li><a href="./contact.html" class="footer-link">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase mb-3">Kết nối với chúng tôi</h5>
+                <div class="d-flex gap-3">
+                    <a href="https://facebook.com" class="connect-item"><img src="../Res/Img/facebook.png" alt=""></a>
+                    <a href="https://youtube.com" class="connect-item"><img src="../Res/Img/youtube.png" alt=""></a>
+                    <a href="https://tiktok.com" class="connect-item"><img src="../Res/Img/tiktok.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-secondary">
+        <div class="text-center small">
+        © 2025 GameZone. All rights reserved.
+    </div>
+    </footer>
+    <script src="../js/account.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", checkLoginStatus);
+    </script>
+</body>
+</html>
